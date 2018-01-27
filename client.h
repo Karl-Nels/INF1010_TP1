@@ -2,7 +2,7 @@
 //  client.h
 //  Created by Martine Bellaiche on 18-01-22.
 //  Copyright © 2018 Martine Bellaiche. All rights reserved.
-//
+//	Edited by Fenjiro Mohamed(1901744) & Karl Nelson SOMO(1859229)
 
 #ifndef CLIENT_H
 #define CLIENT_H
@@ -12,7 +12,7 @@ using namespace std;
 class Client
 {
 public:
-    Client (string  nom,  string prenom, int identifiant, string codePostal,  long date);
+	Client(string  nom, string prenom, int identifiant, string codePostal, long date);
     // methodes d'acces
     
     string obtenirNom() ;

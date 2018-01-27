@@ -1,8 +1,9 @@
-/********************************************
+/******************************************************************
 * Titre: Travail pratique #1 -Rayon.h
 * Date: 20 janvier 2018
 * Auteur: 
-*******************************************/
+* Editeurs : Fenjiro Mohamed(1901744) & Karl Nelson SOMO(1859229)
+*******************************************************************/
 
 #ifndef RAYON_H
 #define RAYON_H
@@ -19,10 +20,10 @@ public:
 	Rayon(string cat);
    
 	// Methodes d'acces
-	string obtenirCategorie();
-	Produit ** obtenirTousProduits();
-    int obtenirCapaciteProduits();
-    int obtenirNombreProduits();
+	string obtenirCategorie() const;
+	Produit ** obtenirTousProduits() const;
+    int obtenirCapaciteProduits() const;
+    int obtenirNombreProduits() const;
 	
 
 	// Methodes de modification
@@ -30,7 +31,7 @@ public:
     
     // autres methodes
     void ajouterProduit (Produit * produit);
-    void afficher();
+    void afficher() const;
 	
 
 private:

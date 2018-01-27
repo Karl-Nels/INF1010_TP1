@@ -1,8 +1,9 @@
-/**************************************************
+/*****************************************************************
 * Titre: Travail pratique #1 - Main.cpp
 * Date: 20 janvier 2018
 * Auteur: Mohammed Esseddik BENYAHIA
-**************************************************/
+* Editeurs : Fenjiro Mohamed(1901744) & Karl Nelson SOMO(1859229)
+******************************************************************/
 
 #include "Produit.h"
 #include "Rayon.h"

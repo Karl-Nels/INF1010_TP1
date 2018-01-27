@@ -1,3 +1,9 @@
+/******************************************************************
+* Titre: Travail pratique #1 - client.cpp
+* Date: 26 janvier 2018
+* Auteurs: Fenjiro Mohamed(1901744) & Karl Nelson SOMO(1859229)
+******************************************************************/
+
 #include <iostream>
 #include "client.h"
 
@@ -56,3 +62,28 @@ void Client::modifierCodePostal(string codePostal) {
 void Client::modifierDateNaissance(long date) {
 	dateNaissance_ = date;
 }
+
+void Client::acheter(Produit * prod) {
+
+	if ( monPanier_ == nullptr)
+		monPanier_ = new Panier[4];
+
+	monPanier_->ajouter(prod);
+
+}
+
+void Client::afficherPanier() {
+
+	if (monPanier_ != nullptr)
+		monPanier_->afficher();
+	else
+		cout << "Votre Panier est vide !" << endl;
+						
+}
+
+void Client::livrerPanier() {
+
+	monPanier_->livrer();
+	delete monPanier_;
+	monPanier_ = nullptr;
+	}
