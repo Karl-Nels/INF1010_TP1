@@ -9,8 +9,15 @@
 
 using namespace std;
 
+Client::Client(): nom_(" "),
+prenom_(" "), identifiant_(0), codePostal_(" "), dateNaissance_(0),monPanier_(nullptr) {
+
+
+}
+
+
 Client::Client(string nom, string prenom, int identifiant, string codePostal, long date): nom_(nom),
-prenom_(prenom), identifiant_(identifiant), codePostal_(codePostal),dateNaissance_(date)
+prenom_(prenom), identifiant_(identifiant), codePostal_(codePostal),dateNaissance_(date),monPanier_(nullptr)
 {
 
 }
@@ -65,11 +72,10 @@ void Client::modifierDateNaissance(long date) {
 
 void Client::acheter(Produit * prod) {
 
-	if ( monPanier_ == nullptr)
-		monPanier_ = new Panier[4];
-
-	monPanier_->ajouter(prod);
-
+	if ( monPanier_ == nullptr){
+		monPanier_ = new Panier(4);
+	}
+		monPanier_->ajouter(prod);
 }
 
 void Client::afficherPanier() {
@@ -84,6 +90,8 @@ void Client::afficherPanier() {
 void Client::livrerPanier() {
 
 	monPanier_->livrer();
-	delete monPanier_;
-	monPanier_ = nullptr;
-	}
+	
+	if(monPanier_ == nullptr)
+		cout << "Le panier a ete vide!" << endl;
+
+}

@@ -9,7 +9,6 @@
 using namespace std;
 
 /***************************************************************************
-Method Class : Produit
 Function	 : Default Constructor (build the object "Produit" with its
 attributes initialized).
 Parameters   : None
@@ -23,7 +22,6 @@ Produit::Produit() {
 
 
 /**********************************************************
-Method Class : Produit
 Function	 : Constructor with parameters (build the
 object "Produit" and assign parameters to its attributes
 the values of the parameters).
@@ -34,7 +32,6 @@ Produit::Produit(string nom, int reference, double prix):nom_(nom),reference_(re
 }
 
 /***************************************************
-Method Class : Produit
 Function	 : Accessor (Get the name value)
 Parameters   : None
 Return		 : Type string (nom_)
@@ -45,7 +42,6 @@ string Produit::obtenirNom() const {
 }
 
 /***************************************************
-Method Class : Produit
 Function	 : Accessor (Get the price value)
 Parameters   : None
 Return		 : Type double (prix_)
@@ -56,18 +52,16 @@ double Produit::obtenirPrix() const {
 }
 
 /***************************************************
-Method Class : Produit
 Function	 : Accessor (Get the reference value)
 Parameters   : None
 Return		 : Type int (reference_)
 ***************************************************/
 int Produit::obtenirReference() const {
 
-	return reference_;
+	return this->reference_;
 }
 
 /**********************************************************
-Method Class : Produit
 Function	 : Modificator (change the object's name value)
 Parameters   : Type string(nom)
 Return		 : None
@@ -78,7 +72,6 @@ void Produit::modifierNom(string nom) {
 }
 
 /***************************************************************
-Method Class : Produit
 Function	 : Modificator (change the object's reference value)
 Parameters   : Type int(reference)
 Return		 : None
@@ -89,14 +82,13 @@ void Produit::modifierReference(int reference) {
 }
 
 /***************************************************************
-Method Class : Produit
 Function	 : Modificator (change the object's price value)
 Parameters   : Type double(prix)
 Return		 : None
 ****************************************************************/
 void Produit::modifierPrix(double prix) {
 	
-	prix_=prix;
+	prix_ = prix;
 }
 
 /******************************************************************
@@ -104,10 +96,10 @@ Method Class : Produit
 Function	 : Method (print the object's attributes in the console)
 Parameters   : None
 Return		 : None
-****************************************************************/
+******************************************************************/
 void Produit::afficher() const{
 	
 	cout << "Nom : " << nom_ << endl;
 	cout << "Reference : " << reference_ << endl;
-	cout << "Prix : " << prix_ << endl;
+	cout << "Prix : " << prix_ << "$" << endl;
 }

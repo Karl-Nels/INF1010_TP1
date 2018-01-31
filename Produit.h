@@ -40,4 +40,4 @@ private:
     double prix_;
 };
 
-#endif
+#endif 

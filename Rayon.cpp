@@ -90,7 +90,9 @@ Return		 : None
 void Rayon::ajouterProduit(Produit * produit) {
 	if (tousProduits_ == nullptr) {
 		capaciteProduits_ = 5;
-		tousProduits_ = new Produit*[capaciteProduits_];		
+		tousProduits_ = new Produit*[capaciteProduits_];
+		tousProduits_[nombreProduits_] = produit;
+		nombreProduits_++;
 	}
 	else if(nombreProduits_ == capaciteProduits_) {
 		Produit** copie = tousProduits_;
@@ -98,8 +100,9 @@ void Rayon::ajouterProduit(Produit * produit) {
 		tousProduits_ = new Produit*[capaciteProduits_];
 		tousProduits_ = copie;
 		delete copie;
+		tousProduits_[nombreProduits_++] = produit;
 	}
-	tousProduits_[nombreProduits_++] = produit;
+
 
 }
 
@@ -115,7 +118,7 @@ void Rayon::afficher() const{
 	cout << "Capacite: " << capaciteProduits_ << endl;
 	cout << "Nombre de produits: " << nombreProduits_ << endl;
 
-	for (unsigned i = 0; i < nombreProduits_; i++) {
+	for (int i = 0; i < nombreProduits_; i++) {
 		tousProduits_[i]->afficher();
 	}
 }
