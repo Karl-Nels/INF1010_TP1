@@ -9,12 +9,6 @@
 
 using namespace std;
 
-Client::Client(): nom_(" "),
-prenom_(" "), identifiant_(0), codePostal_(" "), dateNaissance_(0),monPanier_(nullptr) {
-
-
-}
-
 
 Client::Client(string nom, string prenom, int identifiant, string codePostal, long date): nom_(nom),
 prenom_(prenom), identifiant_(identifiant), codePostal_(codePostal),dateNaissance_(date),monPanier_(nullptr)
