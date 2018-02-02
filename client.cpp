@@ -78,6 +78,7 @@ void Client::afficherPanier() {
 		monPanier_->afficher();
 	else
 		cout << "Votre Panier est vide !" << endl;
+	delete monPanier_;
 						
 }
 
@@ -85,7 +86,7 @@ void Client::livrerPanier() {
 
 	monPanier_->livrer();
 	
-	if(monPanier_ == nullptr)
+/*if(monPanier_ == nullptr)
 		cout << "Le panier a ete vide!" << endl;
-
+		*/
 }

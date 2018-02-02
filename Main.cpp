@@ -25,7 +25,7 @@ int main()
 	//2-  Modifiez le nom, la référence, le prix de  troisieme objet Produit créé
     //   afficher les attributs de cet objet Produit
 	
-	Produit3.modifierNom("Stm32f4board");
+	Produit3.modifierNom("Steamboard2.0");
 	Produit3.modifierReference(81111612);
 	Produit3.modifierPrix(38.95);
 	Produit3.afficher();
@@ -36,7 +36,7 @@ int main()
 	//4-  Modifiez la catégorie  du rayon   
 	Rayon1.modifierCategorie("Electronique");
 
-    // 5- Ajouter 6 produits de  voret chaoix dans le rayon créé
+    // 5- Ajouter 6 produits de  votre choix dans le rayon créé
 	Rayon1.ajouterProduit(&Produit1);
 	Rayon1.ajouterProduit(&Produit2);
 	Rayon1.ajouterProduit(&Produit3);
@@ -73,6 +73,7 @@ int main()
 	client1.livrerPanier();
     
 	//12- afficher le contenu du panier du client
+	client1.afficherPanier();
     
 	//13-  terminer le programme correctement
     

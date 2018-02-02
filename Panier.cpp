@@ -69,22 +69,29 @@ Function	: Method( add a product into the Bucket )
 Parameters	: Produit * prod
 Return		: None
 ****************************************************/
-void Panier::ajouter(Produit * prod) {
+void Panier::ajouter(Produit * produit) {
 
 
 	if (contenuPanier_ == nullptr) {
 		contenuPanier_ = new Produit*[capaciteContenu_];
-		contenuPanier_[nombreContenu_] = prod;
+		contenuPanier_[nombreContenu_] = produit;
 		nombreContenu_++;
 	}
 	else if (capaciteContenu_ == nombreContenu_) {
 
-		Produit ** copie = contenuPanier_;
+		Produit ** copie = new Produit*[capaciteContenu_];
+		for (int i = 0; i < capaciteContenu_; i++)
+		{
+			copie[i] = contenuPanier_[i];
+		}
 		capaciteContenu_ *= 2;
 		contenuPanier_ = new Produit*[capaciteContenu_];
-		contenuPanier_ = copie;
+		for (int i = 0; i < capaciteContenu_; i++)
+		{
+			contenuPanier_[i] = copie[i];
+		}
 		delete copie;
-		contenuPanier_[nombreContenu_++] = prod;
+		contenuPanier_[nombreContenu_++] = produit;
 	}
 
 	totalAPayer_ += contenuPanier_[nombreContenu_ - 1]->obtenirPrix();
@@ -95,12 +102,10 @@ Function	 : Method (Delete the bucket contents)
 Parameters   : None
 Return		 : None
 ***************************************************/
-void Panier::livrer() {
+void Panier::livrer()
+{
 
-	for (int i = 0; i < nombreContenu_; i++) {
-		delete contenuPanier_[i];
-	}
-
+	delete[] contenuPanier_;
 	contenuPanier_ = nullptr;
 	nombreContenu_ = 0;
 	totalAPayer_ = 0.0;
@@ -113,7 +118,8 @@ Function	 : Method (print the bucket values)
 Parameters   : None
 Return		 : None
 ***************************************************/
-void Panier::afficher() const{
+void Panier::afficher() const
+{
 
 	for (int i = 0; i < nombreContenu_; i++) {
 

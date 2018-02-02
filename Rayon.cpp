@@ -95,10 +95,17 @@ void Rayon::ajouterProduit(Produit * produit) {
 		nombreProduits_++;
 	}
 	else if(nombreProduits_ == capaciteProduits_) {
-		Produit** copie = tousProduits_;
+		Produit ** copie = new Produit*[capaciteProduits_];
+		for (int i = 0; i < capaciteProduits_; i++)
+		{
+			copie[i] = tousProduits_[i];
+		}
 		capaciteProduits_ += 5;
 		tousProduits_ = new Produit*[capaciteProduits_];
-		tousProduits_ = copie;
+		for (int i = 0; i < capaciteProduits_; i++)
+		{
+			tousProduits_[i] = copie[i];
+		}
 		delete copie;
 		tousProduits_[nombreProduits_++] = produit;
 	}
