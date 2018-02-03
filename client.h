@@ -12,7 +12,7 @@ using namespace std;
 class Client
 {
 public:
-	Client::Client();
+	//Client::Client();
 	Client(string  nom, string prenom, int identifiant, string codePostal, long date);
     // methodes d'acces
     

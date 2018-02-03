@@ -37,12 +37,12 @@ int main()
 	Rayon1.modifierCategorie("Electronique");
 
     // 5- Ajouter 6 produits de  votre choix dans le rayon créé
-	Rayon1.ajouterProduit(&Produit1);
+	Rayon1.ajouterProduit(&Produit3);
 	Rayon1.ajouterProduit(&Produit2);
 	Rayon1.ajouterProduit(&Produit3);
 	Rayon1.ajouterProduit(&Produit4);
 	Rayon1.ajouterProduit(&Produit5);
-	Rayon1.ajouterProduit(&Produit6);
+	Rayon1.ajouterProduit(&Produit3);
 
     // 6- afficher le contenu du rayon
 	Rayon1.afficher();
@@ -69,7 +69,9 @@ int main()
 
 	//10- Afficher le contenu du panier du client
 	client1.afficherPanier();
+
      //11- livrer le panier du client
+
 	client1.livrerPanier();
     
 	//12- afficher le contenu du panier du client

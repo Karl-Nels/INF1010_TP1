@@ -15,7 +15,8 @@ attributes initialized).
 Parameters   : None
 Return		 : None
 ****************************************************************************/
-Panier::Panier() :capaciteContenu_(0), nombreContenu_(0), totalAPayer_(0.0), contenuPanier_(nullptr) {
+Panier::Panier() :capaciteContenu_(0), nombreContenu_(0), totalAPayer_(0.0), contenuPanier_(nullptr)
+{
 
 	for (int i = 0; i < nombreContenu_; i++) {
 		
@@ -30,7 +31,8 @@ the values of the parameters).
 Parameters   : Inputs => int capacite
 Return		 : Type  "Panier"
 ************************************************************/
-Panier::Panier(int capacite):capaciteContenu_(capacite),nombreContenu_(0),totalAPayer_(0.0), contenuPanier_(nullptr){
+Panier::Panier(int capacite):capaciteContenu_(capacite),nombreContenu_(0),totalAPayer_(0.0), contenuPanier_(nullptr)
+{
 
 }
 
@@ -39,7 +41,8 @@ Function	 : Accessor (Get the Object Contents)
 Parameters   : None
 Return		 : Pointer table, type "Produit"
 ***************************************************/
-Produit ** Panier::obtenirContenuPanier() const{
+Produit ** Panier::obtenirContenuPanier() const
+{
 
 	return contenuPanier_;
 }
@@ -49,7 +52,8 @@ Function	 : Accessor (Get the Object table size)
 Parameters   : None
 Return		 : Type int (nombreContenu_)
 ***************************************************/
-int Panier::obtenirNombreContenu() const{
+int Panier::obtenirNombreContenu() const
+{
 
 	return nombreContenu_;
 }
@@ -59,7 +63,8 @@ Function	 : Accessor (Get the amount to pay)
 Parameters   : None
 Return		 : Type string (totalAPayer_)
 ***************************************************/
-double Panier::obtenirTotalApayer() const {
+double Panier::obtenirTotalApayer() const
+{
 
 	return totalAPayer_;
 }
@@ -69,10 +74,12 @@ Function	: Method( add a product into the Bucket )
 Parameters	: Produit * prod
 Return		: None
 ****************************************************/
-void Panier::ajouter(Produit * produit) {
+void Panier::ajouter(Produit * produit)
+{
 
 
-	if (contenuPanier_ == nullptr) {
+	if (contenuPanier_ == nullptr)
+	{
 		contenuPanier_ = new Produit*[capaciteContenu_];
 		contenuPanier_[nombreContenu_] = produit;
 		nombreContenu_++;
@@ -93,6 +100,11 @@ void Panier::ajouter(Produit * produit) {
 		delete copie;
 		contenuPanier_[nombreContenu_++] = produit;
 	}
+	else
+	{
+		contenuPanier_[nombreContenu_] = produit;
+		nombreContenu_++;
+	}
 
 	totalAPayer_ += contenuPanier_[nombreContenu_ - 1]->obtenirPrix();
 }
@@ -104,8 +116,6 @@ Return		 : None
 ***************************************************/
 void Panier::livrer()
 {
-
-	delete[] contenuPanier_;
 	contenuPanier_ = nullptr;
 	nombreContenu_ = 0;
 	totalAPayer_ = 0.0;
@@ -121,9 +131,13 @@ Return		 : None
 void Panier::afficher() const
 {
 
-	for (int i = 0; i < nombreContenu_; i++) {
+	for (int i = 0; i < nombreContenu_; i++)
+	{
 
 		contenuPanier_[i]->afficher();
+		cout << endl;
+		cout << "Total: " << totalAPayer_ << " $" << endl;
 	}
 
+	cout << endl;
 }

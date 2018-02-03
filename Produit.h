@@ -19,6 +19,8 @@ public:
 	Produit();
 	Produit(string nom, int reference, double prix);
 
+	//Destructeur de la classe
+	~Produit();
 	// Methodes d'acces
 	string obtenirNom() const;
 	int obtenirReference() const;

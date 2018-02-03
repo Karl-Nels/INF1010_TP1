@@ -12,8 +12,12 @@
 class Panier
 {
 public:
+	//Constructeurs 
 	Panier();
     Panier (int capacite);
+
+	// Destructeur
+	~Panier();
     // methodes d'accès
     Produit **  obtenirContenuPanier() const;
     int obtenirNombreContenu()  const;
