@@ -78,6 +78,24 @@ int main()
 	client1.afficherPanier();
     
 	//13-  terminer le programme correctement
-    
+	client1.livrerPanier();
+	cout << "------Merci pour votre fidelite, et a la prochaine!!------" << endl << endl;
+
+/**************************************************************************
+	
+						REPONSES AUX QUESTIONS DU TP
+
+			1.) Il existe un lien d'agregation par pointeur entre la
+			classe client et la classe Panier. Ce lien existe dans la
+			classe Panier, plus precisement la ligne de client.h
+			contenant la declaration : " Panier *  monPanier_".
+
+			2.) Le lien entre Produit et Rayon est aussi un lien
+			d'agregation par pointeur. En supprimant l'objet Rayon contenant
+			un tableau de pointeurs de type Produit comme attribut, on garde
+			toujours les valeurs contenues dans ce tableau. On le remarque dans
+			l'expression "Produit ** tousProduits_" contenue dans Rayon.h
+
+******************************************************************************/
     return 0;
 }

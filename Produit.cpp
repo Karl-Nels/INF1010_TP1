@@ -9,10 +9,10 @@
 using namespace std;
 
 /***************************************************************************
-Function	 : Default Constructor (build the object "Produit" with its
-attributes initialized).
-Parameters   : None
-Return		 : None
+Fonction	 : Produit() constructeur par defaut (construit l'objet Produit avec
+ses parametres).
+Parametres   : Aucun
+Return		 : Aucun
 ****************************************************************************/
 Produit::Produit()
 {
@@ -22,12 +22,12 @@ Produit::Produit()
 }
 
 
-/**********************************************************
-Function	 : Constructor with parameters (build the
-object "Produit" and assign parameters to its attributes
-the values of the parameters).
-Parameters   : Inputs => string nom, int reference, double prix 
-Return		 : Type  "Produit"
+/************************************************************
+Fonction	 : Constructeurr par parametres (construit
+l'objet "Produit" et  assigne les valeurs en parametres
+a ses attributs.
+Parametres   : Entrees => string nom, int reference, double prix 
+Return		 :  Un objet de type "Produit"
 ************************************************************/
 Produit::Produit(string nom, int reference, double prix):nom_(nom),reference_(reference),prix_(prix)
 {
@@ -35,9 +35,7 @@ Produit::Produit(string nom, int reference, double prix):nom_(nom),reference_(re
 }
 
 /************************************************************
-Function	 :	Destructor (Delete the object)
-Parameters   :	None
-Return		 :	None
+Fonction	 :	Destructeur (Detruit l'objet)
 ************************************************************/
 Produit::~Produit()
 {
@@ -45,22 +43,22 @@ Produit::~Produit()
 }
 
 
-/***************************************************
-Function	 : Accessor (Get the name value)
-Parameters   : None
-Return		 : Type string (nom_)
-***************************************************/
+/****************************************************
+Fonction	 : Accesseur (retourne la valeur de nom_)
+Parametres   : Aucun
+Return		 : string (nom_)
+*****************************************************/
 string Produit::obtenirNom() const
 {
 	
 	return nom_;
 }
 
-/***************************************************
-Function	 : Accessor (Get the price value)
-Parameters   : None
+/*****************************************************
+Fonction	 : Accesseur (retourne la valeur de prix_)
+Parametres   : Aucun
 Return		 : Type double (prix_)
-***************************************************/
+******************************************************/
 double Produit::obtenirPrix() const
 {
 	
@@ -68,8 +66,8 @@ double Produit::obtenirPrix() const
 }
 
 /***************************************************
-Function	 : Accessor (Get the reference value)
-Parameters   : None
+Function	 : Accesseur (retourne la reference_)
+Parametres   : Aucun
 Return		 : Type int (reference_)
 ***************************************************/
 int Produit::obtenirReference() const
@@ -79,8 +77,8 @@ int Produit::obtenirReference() const
 }
 
 /**********************************************************
-Function	 : Modificator (change the object's name value)
-Parameters   : Type string(nom)
+Fonction	 : Modificateur (modifie le nom de l'objet)
+Parametres   : Type string(nom)
 Return		 : None
 ***********************************************************/
 void Produit::modifierNom(string nom)
@@ -90,8 +88,8 @@ void Produit::modifierNom(string nom)
 }
 
 /***************************************************************
-Function	 : Modificator (change the object's reference value)
-Parameters   : Type int(reference)
+Fonction	 : Modificateur (modifie la reference de l'objet)
+Parametres   : Type int(reference)
 Return		 : None
 ****************************************************************/
 void Produit::modifierReference(int reference)
@@ -101,8 +99,8 @@ void Produit::modifierReference(int reference)
 }
 
 /***************************************************************
-Function	 : Modificator (change the object's price value)
-Parameters   : Type double(prix)
+Fonction	 : Modificateur (modifie le prix de l'objet)
+Parametres   : Type double(prix)
 Return		 : None
 ****************************************************************/
 void Produit::modifierPrix(double prix)
@@ -112,15 +110,14 @@ void Produit::modifierPrix(double prix)
 }
 
 /******************************************************************
-Method Class : Produit
-Function	 : Method (print the object's attributes in the console)
-Parameters   : None
+Fonction	 : Methode (Affiche tous les attributs de l'objet )
+Parametres   : Aucun
 Return		 : None
 ******************************************************************/
 void Produit::afficher() const
 {
-	
-	cout << "Nom : " << nom_ << endl;
-	cout << "Reference : " << reference_ << endl;
-	cout << "Prix : " << prix_ << "$" <<  endl;
+	cout << "+----------------------------+" << endl;
+	cout << "| Nom : " << setw(10) << nom_ << endl;
+	cout << "| Reference : " << setw(10) << reference_ << endl;
+	cout << "| Prix : " << setw(10)  << prix_ << "$" <<  endl;
 }

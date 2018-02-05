@@ -18,6 +18,7 @@ public:
 
 	// Destructeur
 	~Panier();
+
     // methodes d'accès
     Produit **  obtenirContenuPanier() const;
     int obtenirNombreContenu()  const;

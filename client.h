@@ -14,14 +14,17 @@ class Client
 public:
 	//Client::Client();
 	Client(string  nom, string prenom, int identifiant, string codePostal, long date);
+
     // methodes d'acces
-    
     string obtenirNom() ;
     string obtenirPrenom() ;
     int obtenirIdentifiant() ;
     string obtenirCodePostal() ;
     long obtenirDateNaissance() ;
     
+	//destructeur
+	~Client();
+
     // methodes de modification
     void modifierNom(string nom) ;
     void modifierPrenom(string prenom) ;

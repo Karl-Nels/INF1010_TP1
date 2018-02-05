@@ -10,6 +10,8 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
+
 using namespace std;
 
 class Produit
@@ -21,6 +23,7 @@ public:
 
 	//Destructeur de la classe
 	~Produit();
+
 	// Methodes d'acces
 	string obtenirNom() const;
 	int obtenirReference() const;

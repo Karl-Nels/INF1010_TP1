@@ -9,6 +9,7 @@
 #define RAYON_H
 
 #include <string>
+#include <iomanip>
 #include "Produit.h"
 using namespace std;
 
